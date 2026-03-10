@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'NodeJS'   // ← doit correspondre au nom configuré dans Jenkins Tools
+    nodejs 'NodeJS'
   }
 
   stages {
@@ -17,21 +17,21 @@ pipeline {
     stage('Install') {
       steps {
         echo 'Installation des dépendances...'
-        sh 'npm install'   // Sur Windows remplacer par : bat 'npm install'
+        sh 'npm install'
       }
     }
 
     stage('Test') {
       steps {
         echo 'Lancement des tests...'
-        sh 'npm test'      // Sur Windows : bat 'npm test'
+        sh 'npm test'
       }
     }
 
     stage('Build') {
       steps {
-        echo 'Build de l\'application...'
-        sh 'node -e "console.log(\"Build OK\")"'
+        echo 'Build de application...'
+        sh "node --version"
       }
     }
 
